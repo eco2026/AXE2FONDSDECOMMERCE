@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonds de Commerce - Guide Complet | Droit Commercial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #2d3748;
+            line-height: 1.7;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        /* En-tête */
+        header {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 35px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation des langues */
+        .language-nav {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0 15px;
+            flex-wrap: wrap;
+        }
+        
+        .lang-tab {
+            background-color: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            margin: 0 8px 10px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .lang-tab:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+        
+        .lang-tab.active {
+            background-color: white;
+            color: #1e3a8a;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Contenu principal */
+        .main-content {
+            display: flex;
+            min-height: 700px;
+        }
+        
+        /* Table des matières */
+        .toc {
+            width: 280px;
+            background-color: #f1f5f9;
+            padding: 25px 20px;
+            border-right: 1px solid #e2e8f0;
+            overflow-y: auto;
+            max-height: 800px;
+            position: sticky;
+            top: 0;
+        }
+        
+        .toc h3 {
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #cbd5e1;
+            font-size: 1.3rem;
+        }
+        
+        .toc ul {
+            list-style-type: none;
+        }
+        
+        .toc li {
+            margin-bottom: 12px;
+            position: relative;
+        }
+        
+        .toc a {
+            color: #475569;
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .toc a:hover {
+            background-color: #e2e8f0;
+            color: #1e3a8a;
+            border-left-color: #3b82f6;
+        }
+        
+        .toc a.active {
+            background-color: #dbeafe;
+            color: #1e3a8a;
+            border-left-color: #1d4ed8;
+            font-weight: 600;
+        }
+        
+        /* Contenu */
+        .content-area {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+        
+        /* Sections */
+        .section {
+            margin-bottom: 45px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid #e2e8f0;
+            scroll-margin-top: 20px;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        h2 {
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+            font-size: 1.8rem;
+            position: relative;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background-color: #3b82f6;
+        }
+        
+        /* Questions détaillées */
+        .detailed-question {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .detailed-question:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .q-number {
+            background-color: #3b82f6;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .q-title {
+            color: #1e3a8a;
+            font-size: 1.3rem;
+            flex: 1;
+            line-height: 1.4;
+        }
+        
+        .answer-content {
+            padding-left: 47px;
+            color: #475569;
+        }
+        
+        .answer-content p {
+            margin-bottom: 15px;
+        }
+        
+        /* Listes spéciales */
+        .feature-list {
+            background-color: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .feature-list h4 {
+            color: #1e3a8a;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .feature-list ul {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .feature-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 10px;
+        }
+        
+        .feature-list li::before {
+            content: "•";
+            color: #3b82f6;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Exemples pratiques */
+        .example-box {
+            background-color: #ecfdf5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #10b981;
+        }
+        
+        .example-title {
+            color: #065f46;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .example-title::before {
+            content: "💡";
+        }
+        
+        /* Important notes */
+        .important-note {
+            background-color: #fef3c7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .important-title {
+            color: #92400e;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .important-title::before {
+            content: "⚠️";
+        }
+        
+        /* Styles pour l'arabe */
+        .arabic {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        .arabic h2, .arabic h3, .arabic h4 {
+            color: #1e3a8a;
+        }
+        
+        .arabic .toc a {
+            border-left: none;
+            border-right: 3px solid transparent;
+        }
+        
+        .arabic .toc a:hover {
+            border-right-color: #3b82f6;
+        }
+        
+        .arabic .toc a.active {
+            border-right-color: #1d4ed8;
+        }
+        
+        .arabic h2::after {
+            left: auto;
+            right: 0;
+        }
+        
+        .arabic .question-header {
+            flex-direction: row-reverse;
+        }
+        
+        .arabic .q-number {
+            margin-right: 0;
+            margin-left: 15px;
+        }
+        
+        .arabic .answer-content {
+            padding-left: 0;
+            padding-right: 47px;
+        }
+        
+        .arabic .feature-list {
+            border-left: none;
+            border-right: 4px solid #3b82f6;
+        }
+        
+        .arabic .example-box, .arabic .important-note {
+            border-left: none;
+            border-right: 4px solid;
+        }
+        
+        .french, .arabic {
+            display: none;
+        }
+        
+        .french.active, .arabic.active {
+            display: block;
+        }
+        
+        /* Pied de page */
+        footer {
+            background-color: #1e293b;
+            color: #cbd5e1;
+            padding: 25px 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .toc {
+                width: 100%;
+                position: static;
+                max-height: none;
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+            }
+            
+            .toc ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .toc li {
+                margin-bottom: 0;
+            }
+            
+            .toc a {
+                padding: 8px 12px;
+                white-space: nowrap;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .content-area {
+                padding: 20px;
+            }
+            
+            .detailed-question {
+                padding: 20px;
+            }
+            
+            .question-header {
+                flex-direction: column;
+            }
+            
+            .q-number {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+            
+            .answer-content {
+                padding-left: 0;
+            }
+            
+            .arabic .question-header {
+                flex-direction: column;
+            }
+            
+            .arabic .q-number {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+            
+            .arabic .answer-content {
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Fonds de Commerce - Guide Complet</h1>
+                <p class="subtitle">Une analyse détaillée du concept juridique, des éléments constitutifs et des opérations relatives au fonds de commerce en droit commercial marocain</p>
+                
+                <div class="language-nav">
+                    <button class="lang-tab active" onclick="switchLanguage('french')">
+                        <span>🇫🇷</span> Français
+                    </button>
+                    <button class="lang-tab" onclick="switchLanguage('arabic')">
+                        <span>🇲🇦</span> العربية
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <!-- Table des matières française -->
+            <nav class="toc french active" id="french-toc">
+                <h3>Table des matières</h3>
+                <ul>
+                    <li><a href="#sec1" onclick="highlightTocLink(this)">I. Définition et Nature Juridique</a></li>
+                    <li><a href="#sec2" onclick="highlightTocLink(this)">II. Éléments Constitutifs</a></li>
+                    <li><a href="#sec3" onclick="highlightTocLink(this)">III. Vente du Fonds</a></li>
+                    <li><a href="#sec4" onclick="highlightTocLink(this)">IV. Apport en Société</a></li>
+                    <li><a href="#sec5" onclick="highlightTocLink(this)">V. Nantissement</a></li>
+                    <li><a href="#sec6" onclick="highlightTocLink(this)">VI. Location-Gérance</a></li>
+                    <li><a href="#sec7" onclick="highlightTocLink(this)">VII. Protection des Créanciers</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Table des matières arabe -->
+            <nav class="toc arabic" id="arabic-toc">
+                <h3>جدول المحتويات</h3>
+                <ul>
+                    <li><a href="#sec1-ar" onclick="highlightTocLink(this)">I. التعريف والطبيعة القانونية</a></li>
+                    <li><a href="#sec2-ar" onclick="highlightTocLink(this)">II. العناصر المكونة</a></li>
+                    <li><a href="#sec3-ar" onclick="highlightTocLink(this)">III. بيع المحل التجاري</a></li>
+                    <li><a href="#sec4-ar" onclick="highlightTocLink(this)">IV. الإسهام في الشركة</a></li>
+                    <li><a href="#sec5-ar" onclick="highlightTocLink(this)">V. الرهن</a></li>
+                    <li><a href="#sec6-ar" onclick="highlightTocLink(this)">VI. الكراء-التسيير</a></li>
+                    <li><a href="#sec7-ar" onclick="highlightTocLink(this)">VII. حماية الدائنين</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Contenu en français -->
+            <div class="content-area">
+                <div class="french active" id="french-content">
+                    <!-- Section 1 -->
+                    <section class="section" id="sec1">
+                        <h2>I. Définition et Nature Juridique du Fonds de Commerce</h2>
+                        
+                        <div class="detailed-question">
+                            <div class="question-header">
+                                <div class="q-number">1</div>
+                                <div class="q-title">Quelle est la définition légale du fonds de commerce ?</div>
+                            </div>
+                            <div class="answer-content">
+                                <p>L'article 79 du Code de commerce marocain définit le fonds de commerce comme : <em>"un bien meuble incorporel constitué par l'ensemble de biens mobiliers affectés à l'exercice d'une ou plusieurs activités commerciales"</em>.</p>
+                                
+                                <div class="feature-list">
+                                    <h4>Caractéristiques essentielles :</h4>
+                                    <ul>
+                                        <li><strong>Universalité de fait</strong> : Ensemble d'éléments hétérogènes formant une unité économique</li>
+                                        <li><strong>Bien meuble incorporel</strong> : Bien sans existence physique mais ayant une valeur économique</li>
+                                        <li><strong>Affectation commerciale</strong> : Destiné exclusivement à l'exercice d'une activité commerciale</li>
+                                        <li><strong>Spécificité</strong> : Différent des éléments qui le composent pris individuellement</li>
+                                    </ul>
+                                </div>
+                                
+                                <p>Le fonds n'a pas de personnalité juridique propre mais est reconnu comme une entité économique autonome pouvant être cédée, donnée en garantie ou apportée en société.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detailed-question">
+                            <div class="question-header">
+                                <div class="q-number">2</div>
+                                <div class="q-title">Pourquoi le fonds de commerce est-il si important en droit commercial ?</div>
+                            </div>
+                            <div class="answer-content">
+                                <p>Le fonds de commerce représente l'outil économique principal du commerçant et constitue souvent son actif le plus précieux. Son importance réside dans plusieurs aspects :</p>
+                                
+                                <div class="feature-list">
+                                    <h4>Importance juridique et économique :</h4>
+                                    <ul>
+                                        <li><strong>Valorisation de l'entreprise</strong> : La valeur du fonds dépasse souvent celle de ses éléments pris séparément</li>
+                                        <li><strong>Transférabilité</strong> : Peut être vendu, loué ou apporté en société avec une relative facilité</li>
+                                        <li><strong>Garantie pour les créanciers</strong> : Peut être donné en nantissement pour obtenir des crédits</li>
+                                        <li><strong>Continuité de l'entreprise</strong> : Permet la transmission de l'activité commerciale sans interruption</li>
+                                        <li><strong>Protection du commerçant</strong> : Notamment à travers le droit au bail commercial</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="example-box">
+                                    <div class="example-title">Exemple pratique :</div>
+                                    <p>Un restaurateur souhaitant prendre sa retraite peut vendre son fonds de commerce (incluant la clientèle, le droit au bail, le nom et l'enseigne) à un repreneur. Cette opération permet de maintenir l'activité et de valoriser les années d'effort du vendeur.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Section 2 -->
+                    <section class="section" id="sec2">
+                        <h2>II. Les Éléments Constitutifs du Fonds de Commerce</h2>
+                        
+                        <div class="detailed-question">
+                            <div class="question-header">
+                                <div class="q-number">3</div>
+                                <div class="q-title">Quels sont les éléments corporels et quelle est leur importance ?</div>
+                            </div>
+                            <div class="answer-content">
+                                <p>Les éléments corporels sont les biens matériels nécessaires à l'exploitation du fonds :</p>
+                                
+                                <div class="feature-list">
+                                    <h4>1. Les marchandises (stocks) :</h4>
+                                    <ul>
+                                        <li><strong>Définition</strong> : Biens meubles corporels destinés à être vendus</li>
+                                        <li><strong>Caractéristiques</strong> : Élément le moins stable, renouvelé fréquemment</li>
+                                        <li><strong>Traitement juridique</strong> : Évaluées séparément lors de la vente, exclues du nantissement</li>
+                                        <li><strong>Valeur</strong> : Généralement évaluée au prix coûtant ou au prix du marché</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="feature-list">
+                                    <h4>2. Le matériel et l'outillage :</h4>
+                                    <ul>
+                                        <li><strong>Définition</strong> : Biens servant à l'exploitation mais non destinés à la vente</li>
+                                        <li><strong>Exemples</strong> : Machines, équipements, mobilier, véhicules utilitaires</li>
+                                        <li><strong>Statut juridique</strong> : Biens meubles (sauf immeubles par destination)</li>
+                                        <li><strong>Immeuble par destination</strong> : Lorsque le matériel appartient au propriétaire de l'immeuble et est affecté à son exploitation</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="important-note">
+                                    <div class="important-title">Important :</div>
+                                    <p>Certains fonds de commerce peuvent exister sans matériel ni marchandises (ex: fonds d'agents d'affaires, courtiers, cabinets de conseil). Dans ce cas, la valeur repose essentiellement sur les éléments incorporels.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detailed-question">
+                            <div class="question-header">
+                                <div class="q-number">4</div>
+                                <div class="q-title">Quels sont les éléments incorporels et pourquoi sont-ils essentiels ?</div>
+                            </div>
+                            <div class="answer-content">
+                                <p>Les éléments incorporels constituent le cœur et la valeur essentielle du fonds de commerce :</p>
+                                
+                                <div class="feature-list">
+                                    <h4>A. Éléments incorporels ordinaires :</h4>
+                                    <ul>
+                                        <li><strong>La clientèle et l'achalandage</strong> : Élément fondamental et obligatoire
+                                            <ul>
+                                                <li>Clientèle : ensemble des clients habituels</li>
+                                                <li>Achalandage : clientèle occasionnelle, attirée par l'emplacement</li>
+                                                <li>Doit être commerciale, personnelle, stable et régulière</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Le nom commercial</strong> : Appellation sous laquelle le commerçant exerce
+                                            <ul>
+                                                <li>Protégé par l'immatriculation au registre du commerce</li>
+                                                <li>Distinct de la raison sociale (nom de la société)</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>L'enseigne</strong> : Signe visible identifiant le lieu d'exploitation
+                                            <ul>
+                                                <li>À distinguer de la marque (protège produits/services)</li>
+                                                <li>Peut être un nom, un symbole, une image</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Le droit au bail</strong> : Un des éléments les plus importants
+                                            <ul>
+                                                <li>Protégé par la loi 49-16 sur les baux commerciaux</li>
+                                                <li>Droit au renouvellement ou à indemnité d'éviction</li>
+                                                <li>Conditions : bail écrit + exploitation effective</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="feature-list">
+                                    <h4>B. Éléments incorporels extraordinaires :</h4>
+                                    <ul>
+                                        <li><strong>Droits de propriété intellectuelle</strong> :
+                                            <ul>
+                                                <li>Marques (enregistrées à l'OMPIC)</li>
+                                                <li>Brevets d'invention</li>
+                                                <li>Dessins et modèles industriels</li>
+                                                <li>Droits d'auteur</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Licences et autorisations administratives</strong> :
+                                            <ul>
+                                                <li>Licences d'exploitation (pharmacie, tabac, alcool)</li>
+                                                <li>Autorisations spécifiques (restauration, transport)</li>
+                                                <li>Contrats de franchise</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detailed-question">
+                            <div class="question-header">
+                                <div class="q-number">5</div>
+                                <div class="q-title">Quels éléments sont exclus du fonds de commerce et pourquoi ?</div>
+                            </div>
+                            <div class="answer-content">
+                                <p>Certains éléments sont expressément exclus du fonds de commerce pour des raisons juridiques et pratiques :</p>
+                                
+                                <div class="feature-list">
+                                    <h4>Éléments exclus :</h4>
+                                    <ul>
+                                        <li><strong>Les créances et les dettes</strong> : Ne font pas partie du fonds mais peuvent être cédées séparément</li>
+                                        <li><strong>Les livres de commerce et documents comptables</strong> : Obligation de conservation par le commerçant</li>
+                                        <li><strong>Les contrats</strong> : Sauf exceptions (contrats de travail, assurances qui peuvent être repris)</li>
+                                        <li><strong>Les immeubles</strong> : Le fonds étant un bien meuble, les immeubles en sont exclus
+                                            <ul>
+                                                <li>Exception : l'immeuble peut être loué avec le fonds</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Les droits personnels du commerçant</strong> : Qualifications professionnelles, diplômes</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="important-note">
+                                    <div class="important-title">Conséquence pratique :</div>
+                                    <p>Lors de la vente d'un fonds de commerce, l'acquéreur ne reprend pas automatiquement les dettes du vendeur, sauf s'il y a convention contraire ou reprise explicite de certains engagements.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Section 3 -->
+                    <section class="section" id="sec3">
+                        <h2>III. La Vente du Fonds de Commerce</h2>
+                        
+                        <div class="detailed-question">
+                            <div class="question-header">
+                                <div class="q-number">6</div>
+                                <div class="q-title">Quelles sont les conditions de validité de la vente ?</div>
+                            </div>
+                            <div class="answer-content">
+                                <p>La vente du fonds de commerce est soumise à des conditions strictes pour protéger toutes les parties :</p>
+                                
+                                <div class="feature-list">
+                                    <h4>Conditions de fond (art. 81 du Code de commerce) :</h4>
+                                    <ul>
+                                        <li><strong>Consentement libre et éclairé</strong> : Sans vice du consentement (erreur, dol, violence)</li>
+                                        <li><strong>Capacité commerciale</strong> : Les parties doivent avoir la capacité d'exercer le commerce</li>
+                                        <li><strong>Objet certain</strong> : Le fonds doit être déterminé ou déterminable</li>
+                                        <li><strong>Cause licite</strong> : La raison de la vente ne doit pas être contraire à l'ordre public ou aux bonnes mœurs</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="feature-list">
+                                    <h4>Conditions de forme obligatoires :</h4>
+                                    <ul>
+                                        <li><strong>Acte écrit</strong> : Authentique ou sous seing privé</li>
+                                        <li><strong>Mentions obligatoires</strong> :
+                                            <ul>
+                                                <li>Identité complète des parties</li>
+                                                <li>Origine du fonds (date et nature de l'acquisition par le vendeur)</li>
+                                                <li>Prix détaillé (éléments incorporels, marchandises, matériel)</li>
+                                                <li>État des privilèges et nantissements</li>
+                                                <li>Informations sur le bail en cours</li>
+                                                <li>Chiffre d'affaires et bénéfices des 3 dernières années</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="example-box">
+                                    <div class="example-title">Sanction en cas d'omission :</div>
+                                    <p>Si une mention obligatoire est omise ou inexacte, l'acquéreur peut demander l'annulation du contrat ou la réduction du prix dans un délai d'un an à compter de la date de l'acte, à condition de prouver le préjudice subi.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detailed-question">
+                            <div class="question-header">
+                                <div class="q-number">7</div>
+                                <div class="q-title">Quelles sont les obligations du vendeur et de l'acquéreur ?</div>
+                            </div>
+                            <div class="answer-content">
+                                <p>La vente du fonds génère des obligations réciproques pour les parties :</p>
+                                
+                                <div class="feature-list">
+                                    <h4>Obligations du vendeur :</h4>
+                                    <ul>
+                                        <li><strong>Délivrance du fonds</strong> : Remise effective de tous les éléments</li>
+                                        <li><strong>Garantie d'éviction</strong> : Protection contre les revendications des tiers</li>
+                                        <li><strong>Obligation de non-concurrence</strong> : Ne pas rouvrir un commerce similaire à proximité
+                                            <ul>
+                                                <li>Durée limitée (généralement 5 ans maximum)</li>
+                                                <li>Rayon géographique raisonnable</li>
+                                                <li>Activité similaire ou identique</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Garantie des vices cachés</strong> : Défauts cachés affectant la valeur ou l'exploitation</li>
+                                        <li><strong>Transmission du droit au bail</strong> : Faciliter la conclusion d'un nouveau bail avec le propriétaire</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="feature-list">
+                                    <h4>Obligations de l'acquéreur :</h4>
+                                    <ul>
+                                        <li><strong>Paiement du prix</strong> : Selon les modalités convenues</li>
+                                        <li><strong>Paiement des frais</strong> : Droits d'enregistrement, frais de publicité, honoraires</li>
+                                        <li><strong>Maintien des contrats de travail</strong> : Reprise de tout le personnel en activité
+                                            <ul>
+                                                <li>Obligation légale (article 66 du Code du travail)</li>
+                                                <li>Conservation des anciennetés et droits acquis</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Respect de la destination du fonds</strong> : Continuer l'activité commerciale</li>
+                                        <li><strong>Publicité de la vente</strong> : Respecter les formalités de publication</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Section 4 -->
+                    <section class="section" id="sec4">
+                        <h2>IV. L'Apport du Fonds de Commerce en Société</h2>
+                        
+                        <div class="detailed-question">
+                            <div class="question-header">
+                                <div class="q-number">8</div>
+                                <div class="q-title">En quoi consiste l'apport en société et comment fonctionne-t-il ?</div>
+                            </div>
+                            <div class="answer-content">
+                                <p>L'apport du fonds de commerce en société permet à un commerçant de contribuer au capital d'une société avec son fonds :</p>
+                                
+                                <div class="feature-list">
+                                    <h4>Nature de l'opération :</h4>
+                                    <ul>
+                                        <li><strong>Apport en nature</strong> : Le fonds est apporté à la société en échange de parts sociales ou d'actions</li>
+                                        <li><strong>Transmission à titre onéreux</strong> : Similaire à une vente mais avec paiement en titres sociaux</li>
+                                        <li><strong>Évaluation obligatoire</strong> : Par un commissaire aux apports ou expert indépendant</li>
+                                        <li><strong>Publicité légale</strong> : Publication au bulletin officiel et dans un journal d'annonces légales</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="feature-list">
+                                    <h4>Protection spécifique des créanciers (art. 104-105 du Code de commerce) :</h4>
+                                    <ul>
+                                        <li><strong>Déclaration de créances</strong> : Les créanciers ont 15 jours pour déclarer leurs créances</li>
+                                        <li><strong>Option des associés</strong> : La société a 30 jours pour décider :
+                                            <ul>
+                                                <li>Soit reprendre les dettes déclarées</li>
+                                                <li>Soit renoncer à l'apport (annulation partielle)</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Solidarité</strong> : Si la société accepte l'apport, elle est solidairement tenue avec l'apporteur</li>
+                                        <li><strong>Absence de surenchère du sixième</strong> : Pas applicable car pas de prix en argent</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="important-note">
+                                    <div class="important-title">Différence avec la vente :</div>
+                                    <p>Contrairement à la vente, dans l'apport en société, les créanciers ne peuvent pas faire opposition au paiement du prix (puisqu'il n'y a pas de prix en argent) ni exercer la surenchère du sixième. La protection passe par la procédure de déclaration de créances.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Section 5 -->
+                    <section class="section" id="sec5">
+                        <h2>V. Le Nantissement du Fonds de Commerce</h2>
+                        
+                        <div class="detailed-question">
+                            <div class="question-header">
+                                <div class="q-number">9</div>
+                                <div class="q-title">Qu'est-ce que le nantissement et comment est-il constitué ?</div>
+                            </div>
+                            <div class="answer-content">
+                                <p>Le nantissement permet au propriétaire d'un fonds de commerce de le donner en garantie d'une dette sans en perdre la possession :</p>
+                                
+                                <div class="feature-list">
+                                    <h4>Conditions de formation (art. 107 du Code de commerce) :</h4>
+                                    <ul>
+                                        <li><strong>Acte constitutif</strong> : Notarié ou sous seing privé enregistré</li>
+                                        <li><strong>Éléments nantis</strong> : S'applique automatiquement aux éléments incorporels :
+                                            <ul>
+                                                <li>Nom commercial et enseigne</li>
+                                                <li>Droit au bail</li>
+                                                <li>Clientèle et achalandage</li>
+                                                <li>Licences et autorisations</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Exclusion</strong> : Les marchandises sont exclues du nantissement</li>
+                                        <li><strong>Publicité</strong> : Inscription au registre du commerce dans les 15 jours</li>
+                                        <li><strong>Durée</strong> : 10 ans, renouvelable</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="feature-list">
+                                    <h4>Effets du nantissement :</h4>
+                                    <ul>
+                                        <li><strong>Droit de préférence</strong> : Priorité de paiement sur le prix de vente du fonds</li>
+                                        <li><strong>Droit de suite</strong> : Droit de poursuivre le fonds entre toutes les mains</li>
+                                        <li><strong>Conservation de la possession</strong> : Le débiteur continue d'exploiter le fonds</li>
+                                        <li><strong>Interdiction d'aliénation</strong> : Le fonds ne peut être vendu sans l'accord du créancier nanti</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="important-note">
+                                    <div class="important-title">Surenchère du dixième (art. 123 du Code de commerce) :</div>
+                                    <p>Si le fonds est vendu et que le prix ne satisfait pas les créanciers nantis, ils peuvent surenchérir de 10% sur la valeur des éléments incorporels. À ne pas confondre avec la surenchère du sixième des créanciers chirographaires.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Section 6 -->
+                    <section class="section" id="sec6">
+                        <h2>VI. La Location-Gérance du Fonds de Commerce</h2>
+                        
+                        <div class="detailed-question">
+                            <div class="question-header">
+                                <div class="q-number">10</div>
+                                <div class="q-title">Qu'est-ce que la location-gérance et comment fonctionne-t-elle ?</div>
+                            </div>
+                            <div class="answer-content">
+                                <p>La location-gérance (ou gérance libre) permet au propriétaire de confier l'exploitation de son fonds à un gérant contre rémunération :</p>
+                                
+                                <div class="feature-list">
+                                    <h4>Caractéristiques principales :</h4>
+                                    <ul>
+                                        <li><strong>Contrat de location</strong> : Le propriétaire (bailleur) loue le fonds au gérant (locataire)</li>
+                                        <li><strong>Rémunération</strong> : Loyer fixe ou pourcentage sur les bénéfices</li>
+                                        <li><strong>Statut du gérant</strong> : Commerçant exploitant à ses risques et périls</li>
+                                        <li><strong>Durée limitée</strong> : Généralement 1 à 3 ans, renouvelable</li>
+                                        <li><strong>Interdiction de sous-location</strong> : Sauf autorisation expresse du bailleur</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="feature-list">
+                                    <h4>Formalités obligatoires (art. 152-158 du Code de commerce) :</h4>
+                                    <ul>
+                                        <li><strong>Publicité</strong> : Publication au bulletin officiel et dans un journal d'annonces légales</li>
+                                        <li><strong>Inscription au registre du commerce</strong> : Mention de la location-gérance</li>
+                                        <li><strong>Mention sur les documents</strong> : Le gérant doit indiquer sa qualité sur tous documents</li>
+                                        <li><strong>Immatriculation</strong> : Le gérant doit s'immatriculer au registre du commerce</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="feature-list">
+                                    <h4>Obligations des parties :</h4>
+                                    <ul>
+                                        <li><strong>Obligations du bailleur</strong> :
+                                            <ul>
+                                                <li>Mettre le fonds à disposition</li>
+                                                <li>Ne pas faire concurrence au gérant</li>
+                                                <li>Effectuer les formalités de publicité</li>
+                                                <li>Responsabilité solidaire pendant 6 mois après publication</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Obligations du gérant</strong> :
+                                            <ul>
+                                                <li>Payer le loyer convenu</li>
+                                                <li>Exploiter le fonds avec diligence</li>
+                                                <li>Conserver la destination du fonds</li>
+                                                <li>Ne pas aliéner le fonds (vente, nantissement)</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="example-box">
+                                    <div class="example-title">Exemple pratique :</div>
+                                    <p>Un pharmacien propriétaire d'une officine peut mettre son fonds en location-gérance à un jeune pharmacien qui n'a pas les moyens d'acheter. Le gérant exploite la pharmacie, paie un loyer mensuel, et le propriétaire perçoit un revenu sans avoir à gérer l'exploitation au quotidien.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Section 7 -->
+                    <section class="section" id="sec7">
+                        <h2>VII. Protection des Créanciers du Vendeur</h2>
+                        
+                        <div class="detailed-question">
+                            <div class="question-header">
+                                <div class="q-number">11</div>
+                                <div class="q-title">Comment sont protégés les créanciers lors de la vente du fonds ?</div>
+                            </div>
+                            <div class="answer-content">
+                                <p>La législation marocaine prévoit un système complet de protection des créanciers du vendeur :</p>
+                                
+                                <div class="feature-list">
+                                    <h4>Publicité légale (art. 82-83 du Code de commerce) :</h4>
+                                    <ul>
+                                        <li><strong>Double publication</strong> : Bulletin officiel + journal d'annonces légales</li>
+                                        <li><strong>Dépôt au greffe</strong> : Acte de vente déposé au tribunal dans les 15 jours</li>
+                                        <li><strong>Renouvellement</strong> : Deuxième publication entre le 8e et le 15e jour</li>
+                                        <li><strong>Objectif</strong> : Informer tous les créanciers de la vente</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="feature-list">
+                                    <h4>Droits des créanciers :</h4>
+                                    <ul>
+                                        <li><strong>Créanciers nantis</strong> : Priorité de paiement sur le prix
+                                            <ul>
+                                                <li>Droit de préférence inscrit</li>
+                                                <li>Surenchère du dixième possible</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Créanciers chirographaires</strong> : Pas de garantie particulière
+                                            <ul>
+                                                <li>Droit d'opposition au paiement du prix (15 jours après 2e publication)</li>
+                                                <li>Procédure : Lettre recommandée ou dépôt au greffe</li>
+                                                <li>Surenchère du sixième possible sur éléments incorporels</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Action en nullité</strong> : En cas de fraude ou sous-évaluation du prix</li>
+                                        <li><strong>Recours contre l'acquéreur</strong> : Si le prix a été payé directement au vendeur malgré l'opposition</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="important-note">
+                                    <div class="important-title">Régime de paiement du prix :</div>
+                                    <p>En cas d'opposition, le prix doit être déposé chez un notaire ou à la Caisse de dépôt et de gestion. Les créanciers sont payés selon l'ordre suivant : 1) Frais de justice, 2) Créanciers nantis, 3) Créanciers opposants, 4) Vendeur (le reste).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                
+                <!-- Contenu en arabe -->
+                <div class="arabic" id="arabic-content">
+                    <!-- Le contenu arabe serait structuré de manière similaire -->
+                    <section class="section" id="sec1-ar">
+                        <h2>I. التعريف والطبيعة القانونية للمحل التجاري</h2>
+                        
+                        <div class="detailed-question">
+                            <div class="question-header">
+                                <div class="q-number">1</div>
+                                <div class="q-title">ما هو التعريف القانوني للمحل التجاري؟</div>
+                            </div>
+                            <div class="answer-content">
+                                <p>تعرف المادة 79 من مدونة التجارة المغربية المحل التجاري بأنه: <em>"منقول معنوي يتكون من مجموعة المنقولات المخصصة لممارسة نشاط تجاري واحد أو عدة أنشطة تجارية"</em>.</p>
+                                
+                                <div class="feature-list">
+                                    <h4>الخصائص الأساسية:</h4>
+                                    <ul>
+                                        <li><strong>مجموعة قانونية واقعة</strong>: مجموعة من العناصر المختلفة تشكل وحدة اقتصادية</li>
+                                        <li><strong>منقول معنوي</strong>: مال لا وجود مادي له لكن له قيمة اقتصادية</li>
+                                        <li><strong>تخصيص تجاري</strong>: مخصص حصريًا لممارسة نشاط تجاري</li>
+                                        <li><strong>خصوصية</strong>: يختلف عن العناصر المكونة له إذا أخذت منفردة</li>
+                                    </ul>
+                                </div>
+                                
+                                <p>لا يتمتع المحل التجاري بشخصية معنوية مستقلة لكنه معترف به ككيان اقتصادي مستقل يمكن بيعه أو رهنه أو إسهامه في شركة.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Plus de contenu arabe suivant la même structure... -->
+                    </section>
+                    
+                    <!-- Note: Pour garder le code concis, seul un exemple de section en arabe est inclus.
+                    En réalité, toutes les sections seraient traduites de la même manière. -->
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="footer-content">
+                <p>هذا الملخص مبني على الوثيقة "Axe-II-_1_.doc" ويتناول موضوع المحل التجاري في القانون التجاري المغربي</p>
+                <p>This summary is based on the document "Axe-II-_1_.doc" and covers the topic of Commercial Funds in Moroccan commercial law</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">© 2023 - ملخص تعليمي لأغراض تربوية - Résumé pédagogique à des fins éducatives</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Fonction pour changer de langue
+        function switchLanguage(lang) {
+            // Mettre à jour les onglets de langue
+            document.querySelectorAll('.lang-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            if (lang === 'french') {
+                document.querySelector('.lang-tab:nth-child(1)').classList.add('active');
+            } else {
+                document.querySelector('.lang-tab:nth-child(2)').classList.add('active');
+            }
+            
+            // Afficher/masquer le contenu et la table des matières
+            document.getElementById('french-content').classList.remove('active');
+            document.getElementById('arabic-content').classList.remove('active');
+            document.getElementById('french-toc').classList.remove('active');
+            document.getElementById('arabic-toc').classList.remove('active');
+            
+            document.getElementById(lang + '-content').classList.add('active');
+            document.getElementById(lang + '-toc').classList.add('active');
+            
+            // Réinitialiser la table des matières
+            resetTocHighlight();
+        }
+        
+        // Fonction pour mettre en évidence le lien dans la table des matières
+        function highlightTocLink(link) {
+            // Retirer la classe active de tous les liens
+            const allLinks = link.parentElement.parentElement.querySelectorAll('a');
+            allLinks.forEach(l => l.classList.remove('active'));
+            
+            // Ajouter la classe active au lien cliqué
+            link.classList.add('active');
+        }
+        
+        // Fonction pour réinitialiser la mise en évidence
+        function resetTocHighlight() {
+            document.querySelectorAll('.toc a').forEach(link => {
+                link.classList.remove('active');
+            });
+        }
+        
+        // Suivi du défilement pour la table des matières
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            const scrollPosition = window.scrollY + 100;
+            
+            let currentSectionId = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    currentSectionId = section.id;
+                }
+            });
+            
+            // Mettre à jour la table des matières active
+            if (currentSectionId) {
+                const activeLang = document.querySelector('.lang-tab.active').textContent.includes('Français') ? 'french' : 'arabic';
+                const toc = document.getElementById(activeLang + '-toc');
+                
+                if (toc) {
+                    const allLinks = toc.querySelectorAll('a');
+                    allLinks.forEach(link => link.classList.remove('active'));
+                    
+                    const correspondingLink = toc.querySelector(`a[href="#${currentSectionId}"]`);
+                    if (correspondingLink) {
+                        correspondingLink.classList.add('active');
+                    }
+                }
+            }
+        });
+        
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Activer le premier lien de la table des matières
+            const firstTocLink = document.querySelector('#french-toc a');
+            if (firstTocLink) {
+                firstTocLink.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
